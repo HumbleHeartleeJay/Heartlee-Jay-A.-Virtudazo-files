@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heartlee Student Profile System</title>
+</head>
+<body>
+
+
+  <style>
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #eaf6f6;
+    color: #123524;
+    line-height: 1.6;
+  }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    background-color: #0b3d2e;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  nav a:hover {
+    color: #6091ce;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 40px 10%;
+    border-bottom: 1px solid #b7dfd5;
+  }
+
+  h2 {
+    color: #0b3d2e;
+    border-left: 6px solid #1e88e5;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: #1e6091;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  /* ===== HOME ===== */
+  #home {
+    background-color: #0b3d2e;
+    color: #eaf6f6;
+    text-align: center;
+    padding: 60px 10%;
+  }
+
+  #home img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #4fc3f7;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  #home h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  #home p.motto {
+    font-style: italic;
+    color: #a8e6cf;
+  }
+
+
+
+
+.project-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.project-img1 {
+  width: 220px;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #cde9de;
+  flex-shrink: 0;
+}
+
+.project-img2{
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #cde9de;
+  flex-shrink: 0;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.project-info p {
+  margin-bottom: 6px;
+}
+
+.project-img-link {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.project-img-link:hover .project-img {
+  opacity: 0.85;
+}
+
+
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #cde9de;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+
+
+  /* ===== ABOUT ME ===== */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  .info-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #cde9de;
+  }
+
+  .info-table td:first-child {
+    font-weight: bold;
+    color: #0b3d2e;
+    width: 200px;
+  }
+
+  /* ===== CARDS (Education, Skills, Projects, etc.) ===== */
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #cde9de;
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+  }
+
+  .card h4 {
+    color: #1e88e5;
+    margin-bottom: 6px;
+  }
+
+  ul {
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  /* ===== SKILL TAGS ===== */
+  .tag {
+    display: inline-block;
+    background-color: #d6f0ea;
+    color: #0b3d2e;
+    border: 1px solid #7fc9b9;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin: 4px 4px 0 0;
+  }
+
+  .tag.blue {
+    background-color: #dceefb;
+    color: #124e75;
+    border: 1px solid #74b9e7;
+  }
+
+  
+
+
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: #0b3d2e;
+    color: #cdeac0;
+    text-align: center;
+    padding: 20px 10%;
+    font-size: 14px;
+  }
+
+  footer a {
+    color: #4fc3f7;
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  </style>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#resume">Resume</a>
+  </nav>
+
+  <section id="home">
+    <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/700064031_122285358548163930_9067912414291109744_n.jpg?stp=dst-jpg_tt6&cstp=mx1224x1632&ctp=s1224x1632&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFZ50Xf3quvCIgz4RsO4k2gBl2Mq_ajN-wGXYyr9qM37AZuIcNXHJIQWMhNyzhSKFlwosvq-w-XmWAUKGX_AEjN&_nc_ohc=mYqDg3KZNpAQ7kNvwFjGwj9&_nc_oc=AdqHTZTKo1AONjl0bK6GOFqcY6T8kbNlz6C73kc5AhpnAlJqWH12kqIYN5hpwOfxUoA&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=9niZuO5mwTFZJ_CgSFaKWQ&_nc_ss=7b2a8&oh=00_AQCmc84wBOPmDFrPfL_WWz2-QZiOfzetyH95ZLFP95dFnw&oe=6A4F7FFC" alt="Profile Photo">
+    <h1>Heartlee Jay Alvizo Virtudazo</h1>
+    <p class="motto">" if you're tired just sleep"</p>
+    <p>Welcome to my student profile! Feel free to look around and learn more about me.</p>
+  </section>
+
+
+  <section id="about">
+    <h2>About Me</h2>
+    <table class="info-table">
+      <tr><td>Full Name</td><td>Heartlee Jay Alvizo Virtudazo</td></tr>
+      <tr><td>Age</td><td>19 years old</td></tr>
+      <tr><td>Address</td><td>P-5 San Antonio, Bislig City, Surigao del Sur, Philippines</td></tr>
+      <tr><td>Course & Year Level</td><td>BS Information Technology, 1st Year</td></tr>
+      <tr><td>Short Biography</td><td>I am a Bachelor of Science in Information Technology (BSIT) student from a simple and hardworking family. My family inspires me to continue studying and work toward achieving my goals in life. I enjoy creating simple designs and learning new skills that help me improve my creativity and technical abilities.</td></tr>
+      <tr><td>Career Goals</td><td>My career goal is to become a successful IT professional. I want to continue learning and improving my knowledge and skills in Information Technology so I can prepare myself for future opportunities. I hope to find a good and stable job that will allow me to support my family, provide them with a better life, and achieve my personal and professional goals.</td></tr>
+    </table>
+  </section>
+
+
+  <section id="education">
+    <h2>Educational Background</h2>
+
+    <div class="card">
+      <h4>Elementary School</h4>
+      <p>Requina Central Elementary School (2018 - 2019)</p>
+    </div>
+
+    <div class="card">
+      <h4>High School</h4>
+      <p>Mangagoy National High School (2022 - 2023)</p>
+    </div>
+
+    <div class="card">
+      <h4>Senior High School</h4>
+      <p>Mangagoy National High School - HUMMS Strand (2024- 2025)</p>
+    </div>
+
+    <div class="card">
+      <h4>College (Current)</h4>
+      <p>De La Salle John Bosco College - BS Information Technology (2025 - Present)</p>
+    </div>
+  </section>
+
+
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <h3>Programming Languages</h3>
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag blue">Java Script (little learning)</span>
+
+    <h3>Software Applications</h3>
+    <span class="tag">Micro Soft Office</span>
+    <span class="tag">Canva</span>
+    <span class="tag">VS Code</span>
+    <span class="tag">XAMPP</span>
+    <span class="tag">Claude, Chat GPT A.I</span>
+
+    <h3>Soft Skills</h3>
+    <span class="tag blue">Communication</span>
+    <span class="tag blue">Teamwork</span>
+    <span class="tag blue">Time Management</span>
+    <span class="tag blue">Good Manners</span>
+  </section>
+
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+
+
+  <div class="card project-card">
+    <a href="https://scontent.fcgy2-3.fna.fbcdn.net/v/t39.30808-6/739112191_122291759558163930_3189563865288596418_n.jpg?stp=dst-jpg_tt6&cstp=mx339x585&ctp=s339x585&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEdslZnJCwpK7y6hgDX_RwamnX-SFCcstiadf5IUJyy2B7RMVr8E7MRBMTej089JrGUmgRn9j-Nem7cMuwsxS_1&_nc_ohc=ALupHgRJoLcQ7kNvwFO7VA5&_nc_oc=Adq1o9hIZFn8OTod-uFOmyWJL_3t10k9sTDHiA0B-ZqgHPbAhiovRkQz52hkv7D398o&_nc_zt=23&_nc_ht=scontent.fcgy2-3.fna&_nc_gid=UpFNovVcIi7U_tnHb5NHaA&_nc_ss=7b2a8&oh=00_AQCUWVBPXWopaPN4QBhFMtFAN2F_Gzw1c6MA6H-7sbmK7w&oe=6A5182FD" target="_blank" class="project-img-link">
+      <img src="https://scontent.fcgy2-3.fna.fbcdn.net/v/t39.30808-6/739112191_122291759558163930_3189563865288596418_n.jpg?stp=dst-jpg_tt6&cstp=mx339x585&ctp=s339x585&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEdslZnJCwpK7y6hgDX_RwamnX-SFCcstiadf5IUJyy2B7RMVr8E7MRBMTej089JrGUmgRn9j-Nem7cMuwsxS_1&_nc_ohc=ALupHgRJoLcQ7kNvwFO7VA5&_nc_oc=Adq1o9hIZFn8OTod-uFOmyWJL_3t10k9sTDHiA0B-ZqgHPbAhiovRkQz52hkv7D398o&_nc_zt=23&_nc_ht=scontent.fcgy2-3.fna&_nc_gid=UpFNovVcIi7U_tnHb5NHaA&_nc_ss=7b2a8&oh=00_AQCUWVBPXWopaPN4QBhFMtFAN2F_Gzw1c6MA6H-7sbmK7w&oe=6A5182FD" alt="Student Information System Screenshot" class="project-img1">
+    </a>
+    <div class="project-info">
+      <h4>Project Title: EXPLORE application</h4>
+      <p><strong>Description:</strong> A simple third party application about our Topic in World Religion in SHS, this also being use for research porouses in Research Festival (2nd Placer).</p>
+      <p><strong>Technologies Used:</strong> HTML, CSS, Adobe XD, APK Builder</p>
+      <p><strong>Status:</strong> Completed</p>
+    </div>
+  </div>
+
+  <div class="card project-card">
+    <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739790345_122291759642163930_5248862792495576209_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1020&ctp=s1920x1020&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHK86VWNUoLD8bbsLSun1t1Sz7OQMclzy5LPs5AxyXPLgg1GUdA0vtsK265k-LgeuSRi1MBlSa4r6dZysVIHvtV&_nc_ohc=nOX53mHLTLUQ7kNvwE-CdOs&_nc_oc=AdrVFMP6bks2nvfbjUupLuieQxnwS91QC1q2WRXF8EcfAVETukrzKd8XutJCCn94quw&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=BZFOzKHhs3gpAxuPdJVAzw&_nc_ss=7b2a8&oh=00_AQAjXZkruUTvQ6aMbwZiE7fS9nNxYSV_dU4t1AGGfu9W6A&oe=6A516268" target="_blank" class="project-img-link">
+      <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739790345_122291759642163930_5248862792495576209_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1020&ctp=s1920x1020&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHK86VWNUoLD8bbsLSun1t1Sz7OQMclzy5LPs5AxyXPLgg1GUdA0vtsK265k-LgeuSRi1MBlSa4r6dZysVIHvtV&_nc_ohc=nOX53mHLTLUQ7kNvwE-CdOs&_nc_oc=AdrVFMP6bks2nvfbjUupLuieQxnwS91QC1q2WRXF8EcfAVETukrzKd8XutJCCn94quw&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=BZFOzKHhs3gpAxuPdJVAzw&_nc_ss=7b2a8&oh=00_AQAjXZkruUTvQ6aMbwZiE7fS9nNxYSV_dU4t1AGGfu9W6A&oe=6A516268" alt="Student Information System Screenshot" class="project-img2">
+    </a>
+    <div class="project-info">
+      <h4>Project Title: Discrete Math Project</h4>
+      <p><strong>Description:</strong> A simple third party appliccation about our Discrete Math topics. I choose Binomial Coefficients topic here.</p>
+      <p><strong>Technologies Used:</strong> HTML, CSS, Adobe XD, APK Builder</p>
+      <p><strong>Status:</strong> Completed</p>
+    </div>
+  </div>
+
+
+
+</section>
+
+
+
+  <section id="achievements">
+    <h2>Certificates and Achievements</h2>
+
+    <div class="card">
+      <h4>Trainings Attended</h4>
+      <ul>
+        <li>BSP Jamboree (2025)</li>
+        <li>Red Cross (2025)</li>
+        <li>NSTP (2026)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Certificates Earned</h4>
+      <ul>
+        <li>Research Paper HUMMS category 2nd Placer. SHS Research Festival 2025</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Academic Awards</h4>
+      <ul>
+        <li>Honorable mention, SHS 2024-2025</li>
+        <li>Honorable mention, 1st, 2nd, 3rd Semester. 2025-2026</li>
+        <li>Service Awardee YES-O & BSP</li>
+        <li>Research 2nd Placer</li>
+        <li>Loyalty Award in MNHS</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+
+  <div class="gallery-item">
+      <a href="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/738796991_122291758652163930_5852904427748373188_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFfLJ6jswEcSezNyFJAF2vbt7IcVIt1GGK3shxUi3UYYrsVUNmnDMjaiUTIpWzGn_6ltzGHSfNSR1buJxp6i4_9&_nc_ohc=r-XSKyUUs2IQ7kNvwFgTkZo&_nc_oc=AdpLD3yN-qER5ShgzGNjHgBrR-NCpLStn73Aw8fR52mjE6Q9uD26LyLqfwTz7EsZOSY&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=ZE0T9szKgHfKYAQLnhjJaQ&_nc_ss=7b2a8&oh=00_AQAkzYL9-5RDSh10SEDz6ItnWkeS3qKX69ZzfRUbjbJl1Q&oe=6A519041">
+        <img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/738796991_122291758652163930_5852904427748373188_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFfLJ6jswEcSezNyFJAF2vbt7IcVIt1GGK3shxUi3UYYrsVUNmnDMjaiUTIpWzGn_6ltzGHSfNSR1buJxp6i4_9&_nc_ohc=r-XSKyUUs2IQ7kNvwFgTkZo&_nc_oc=AdpLD3yN-qER5ShgzGNjHgBrR-NCpLStn73Aw8fR52mjE6Q9uD26LyLqfwTz7EsZOSY&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=ZE0T9szKgHfKYAQLnhjJaQ&_nc_ss=7b2a8&oh=00_AQAkzYL9-5RDSh10SEDz6ItnWkeS3qKX69ZzfRUbjbJl1Q&oe=6A519041" alt="Gallery photo 2">
+      </a>
+      <p>HUMMS Student na Gwapo</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739470794_122291759060163930_2404964290573231651_n.jpg?stp=dst-jpg_tt6&cstp=mx1664x2048&ctp=s1664x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGUYro6OG4g_ajGkKFZYHW5vWVy9o4-Vuy9ZXL2jj5W7J_gnCrKhwm8PGrFUcANsK63QEzFPd3296-KEW3uyECz&_nc_ohc=16lpwDgcqtAQ7kNvwHt40cN&_nc_oc=Ado3inJDGUrY2pHNGn0u4j8VpMO2FFK0Vo5nj4g_RjFWo4b9DK87AoWME3Op-6xDVuk&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=n-BOugEtPwNoj0uMeFhnPw&_nc_ss=7b2a8&oh=00_AQDm_dZvq0q6F-yvwYZ75NwnqMGiZMowCzTgSE28GVySSg&oe=6A5174D6" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739470794_122291759060163930_2404964290573231651_n.jpg?stp=dst-jpg_tt6&cstp=mx1664x2048&ctp=s1664x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGUYro6OG4g_ajGkKFZYHW5vWVy9o4-Vuy9ZXL2jj5W7J_gnCrKhwm8PGrFUcANsK63QEzFPd3296-KEW3uyECz&_nc_ohc=16lpwDgcqtAQ7kNvwHt40cN&_nc_oc=Ado3inJDGUrY2pHNGn0u4j8VpMO2FFK0Vo5nj4g_RjFWo4b9DK87AoWME3Op-6xDVuk&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=n-BOugEtPwNoj0uMeFhnPw&_nc_ss=7b2a8&oh=00_AQDm_dZvq0q6F-yvwYZ75NwnqMGiZMowCzTgSE28GVySSg&oe=6A5174D6" alt="Gallery photo 2">
+      </a>
+      <p>NSTP Student na Gwapo</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/740601814_122291759036163930_2829284806578908086_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFgpa_RFXtDEWLeb2CjixCRHVgc890sTKAdWBzz3SxMoIqe6SNqTqbBEH6Qm6BOXCwIgRW8db9lAUvqXJG9CvDk&_nc_ohc=Pd5vMTbZzgoQ7kNvwFEo71a&_nc_oc=Adr7TYJJlQy9WIqcNMdnotMdv_PnPR0hBxscEjszZbvcvtipQJwSlTM47TzrKELeFXY&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=yeUA0THnUeTLz47ZJqdopw&_nc_ss=7b2a8&oh=00_AQDheAgSoGQEo0Cdjw1v1r3IIeUyFl9FXtndOb0LJHYWWg&oe=6A5188F2" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/740601814_122291759036163930_2829284806578908086_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFgpa_RFXtDEWLeb2CjixCRHVgc890sTKAdWBzz3SxMoIqe6SNqTqbBEH6Qm6BOXCwIgRW8db9lAUvqXJG9CvDk&_nc_ohc=Pd5vMTbZzgoQ7kNvwFEo71a&_nc_oc=Adr7TYJJlQy9WIqcNMdnotMdv_PnPR0hBxscEjszZbvcvtipQJwSlTM47TzrKELeFXY&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=yeUA0THnUeTLz47ZJqdopw&_nc_ss=7b2a8&oh=00_AQDheAgSoGQEo0Cdjw1v1r3IIeUyFl9FXtndOb0LJHYWWg&oe=6A5188F2" alt="Gallery photo 2">
+      </a>
+      <p>Awards & Graduation</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-3.fna.fbcdn.net/v/t39.30808-6/740562970_122291758676163930_868294492763336120_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1440&ctp=s1080x1440&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGZCkU5lD7vBlEAdPjk2yfwyLCPFvCnTnDIsI8W8KdOTx92Kr8cxoVWgVEchB_K8yVYzR2bF83eRYelSh2TG6z&_nc_ohc=iOMExyo_8v4Q7kNvwEvJu9Z&_nc_oc=AdqzyPEGrILkkw85pZ5PGRvBzkosrqb4dZGKi3CMnthkgtVZaRN6iym-kg2fS1-2Les&_nc_zt=23&_nc_ht=scontent.fcgy2-3.fna&_nc_gid=ATNZjDZfLduClBePMPuNXg&_nc_ss=7b2a8&oh=00_AQDJiQuaSRWUwvwOAWxPuRclijYpMFS0u6S_2cqAPL_gKQ&oe=6A516EF1" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-3.fna.fbcdn.net/v/t39.30808-6/740562970_122291758676163930_868294492763336120_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1440&ctp=s1080x1440&_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHGZCkU5lD7vBlEAdPjk2yfwyLCPFvCnTnDIsI8W8KdOTx92Kr8cxoVWgVEchB_K8yVYzR2bF83eRYelSh2TG6z&_nc_ohc=iOMExyo_8v4Q7kNvwEvJu9Z&_nc_oc=AdqzyPEGrILkkw85pZ5PGRvBzkosrqb4dZGKi3CMnthkgtVZaRN6iym-kg2fS1-2Les&_nc_zt=23&_nc_ht=scontent.fcgy2-3.fna&_nc_gid=ATNZjDZfLduClBePMPuNXg&_nc_ss=7b2a8&oh=00_AQDJiQuaSRWUwvwOAWxPuRclijYpMFS0u6S_2cqAPL_gKQ&oe=6A516EF1" alt="Gallery photo 2">
+      </a>
+      <p>Mga Boys</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739782063_122291759270163930_8675941168035733831_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGBh2awEEt5xndvQHMriFKg6YthJhdV8Yrpi2EmF1XxiqHVnWgcppAStooXVLghYzQzjaJUq846nGin_AF0-d7p&_nc_ohc=EYtOpsdINC0Q7kNvwHpeTXz&_nc_oc=Ado_7_SQoLw1DSdbugClnljYsHHqi-RVrTTaaVXBJBw6nCvlqeU6WdK9HFONEJb91oU&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=Xcxzvuk27yGv6BB_wcobcg&_nc_ss=7b2a8&oh=00_AQCc3dWVNuHBa2EItmRbUqP1qb4EU3VZY4XHV52KzIvDRw&oe=6A517637" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739782063_122291759270163930_8675941168035733831_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGBh2awEEt5xndvQHMriFKg6YthJhdV8Yrpi2EmF1XxiqHVnWgcppAStooXVLghYzQzjaJUq846nGin_AF0-d7p&_nc_ohc=EYtOpsdINC0Q7kNvwHpeTXz&_nc_oc=Ado_7_SQoLw1DSdbugClnljYsHHqi-RVrTTaaVXBJBw6nCvlqeU6WdK9HFONEJb91oU&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=Xcxzvuk27yGv6BB_wcobcg&_nc_ss=7b2a8&oh=00_AQCc3dWVNuHBa2EItmRbUqP1qb4EU3VZY4XHV52KzIvDRw&oe=6A517637" alt="Gallery photo 2">
+      </a>
+      <p>BSP Color guards</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/739965938_122291758928163930_6228605003228450899_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4cavsvZH9hWZup8iCiPM0rvE-IuWOnWyu8T4i5Y6dbHy7JF22-dzI5KBZkA69NdfzdGFhVNSlfBXSOiAXsr1h&_nc_ohc=af08kH0r7hkQ7kNvwGzzcv_&_nc_oc=AdoFshMv1C7piKMQs6fgABj-_tPw5vX8QzgIsdjjl96iuLyv5dxMoV-ytEaBYHlZNUM&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=_9I2PPOgFYiIOjUGgGO_Xw&_nc_ss=7b2a8&oh=00_AQDHkmq5ASuFB8xSOCxa3leTjfHO9Yt2UgP5kGsBxTZB3w&oe=6A516742" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/739965938_122291758928163930_6228605003228450899_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF4cavsvZH9hWZup8iCiPM0rvE-IuWOnWyu8T4i5Y6dbHy7JF22-dzI5KBZkA69NdfzdGFhVNSlfBXSOiAXsr1h&_nc_ohc=af08kH0r7hkQ7kNvwGzzcv_&_nc_oc=AdoFshMv1C7piKMQs6fgABj-_tPw5vX8QzgIsdjjl96iuLyv5dxMoV-ytEaBYHlZNUM&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=_9I2PPOgFYiIOjUGgGO_Xw&_nc_ss=7b2a8&oh=00_AQDHkmq5ASuFB8xSOCxa3leTjfHO9Yt2UgP5kGsBxTZB3w&oe=6A516742" alt="Gallery photo 2">
+      </a>
+      <p>My Cat</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/736689200_122291758790163930_2397752065422731621_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFUicuphrqmczZ9aK3IwawjBW55kHlJmeEFbnmQeUmZ4c9o7qdJC5VeJbt6KPKofUAnsGkaq5_ts_hZfMpmCHT0&_nc_ohc=bquG4jlhHIoQ7kNvwHudRfx&_nc_oc=Ado2dW47DPI6f3lsuzAL0O2MkkS6hm6oNzE3FDTyrFrNqdE17GpiW37MWr0phqb-i-I&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=OYAHtN6H0x8p4bhZioXJ6A&_nc_ss=7b2a8&oh=00_AQCVv6zr0FHq0qsw9pDjyRnhtHtl1Q8lRSN4cwIto4nMeQ&oe=6A518D7B" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/736689200_122291758790163930_2397752065422731621_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFUicuphrqmczZ9aK3IwawjBW55kHlJmeEFbnmQeUmZ4c9o7qdJC5VeJbt6KPKofUAnsGkaq5_ts_hZfMpmCHT0&_nc_ohc=bquG4jlhHIoQ7kNvwHudRfx&_nc_oc=Ado2dW47DPI6f3lsuzAL0O2MkkS6hm6oNzE3FDTyrFrNqdE17GpiW37MWr0phqb-i-I&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=OYAHtN6H0x8p4bhZioXJ6A&_nc_ss=7b2a8&oh=00_AQCVv6zr0FHq0qsw9pDjyRnhtHtl1Q8lRSN4cwIto4nMeQ&oe=6A518D7B" alt="Gallery photo 2">
+      </a>
+      <p>BSP Jamboree</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739616008_122291758826163930_618974784578745242_n.jpg?stp=dst-jpg_tt6&cstp=mx2000x1500&ctp=s2000x1500&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFnyz6_EB9kLnJVo8GYzqaLh-2RBlO2fFWH7ZEGU7Z8Vf09Ip0yjt5vP0RJGdru14slaBIF5ILgdAlF_KMYFIRI&_nc_ohc=4vwPF0fjJg8Q7kNvwFdPaTJ&_nc_oc=Adp1pT1cqiOYT81JwwmMYFY1zLLY6jykkrody772Ax-1H2Tn6QNpWfR3BrW9VZfE364&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=5KGnqo6fK_xkk3BclaP_BA&_nc_ss=7b2a8&oh=00_AQB_-g12SHmMnywylO1Zc2PSLtOFBa_XBWI-H-pop9QjMg&oe=6A517509" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/739616008_122291758826163930_618974784578745242_n.jpg?stp=dst-jpg_tt6&cstp=mx2000x1500&ctp=s2000x1500&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFnyz6_EB9kLnJVo8GYzqaLh-2RBlO2fFWH7ZEGU7Z8Vf09Ip0yjt5vP0RJGdru14slaBIF5ILgdAlF_KMYFIRI&_nc_ohc=4vwPF0fjJg8Q7kNvwFdPaTJ&_nc_oc=Adp1pT1cqiOYT81JwwmMYFY1zLLY6jykkrody772Ax-1H2Tn6QNpWfR3BrW9VZfE364&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=5KGnqo6fK_xkk3BclaP_BA&_nc_ss=7b2a8&oh=00_AQB_-g12SHmMnywylO1Zc2PSLtOFBa_XBWI-H-pop9QjMg&oe=6A517509" alt="Gallery photo 2">
+      </a>
+      <p>BSP cave exploring</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/741021922_122291759330163930_1999231928303156576_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEtDZGpq9QsHL61IVlyHc6J3qFjBkjoACXeoWMGSOgAJfUXU5WZoCEr9q2-eeej224lbdaTm-xECFHOT5nudvgN&_nc_ohc=1Bs8EcYZHNUQ7kNvwHvjEnv&_nc_oc=Adr-UIWWQIfrW2UQB9oFLXi3RoJWjZVSxZPCg9pmox51SPdR_v6TZga0gShp2l-gJYc&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=z_hRf7AUcjPUAQF0TfOmrw&_nc_ss=7b2a8&oh=00_AQBLgqYugL3N5s3NjOs2tSOoBRxyfUuZNybJsYReoqacew&oe=6A518EC1" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/741021922_122291759330163930_1999231928303156576_n.jpg?stp=dst-jpg_tt6&cstp=mx1365x2048&ctp=s1365x2048&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEtDZGpq9QsHL61IVlyHc6J3qFjBkjoACXeoWMGSOgAJfUXU5WZoCEr9q2-eeej224lbdaTm-xECFHOT5nudvgN&_nc_ohc=1Bs8EcYZHNUQ7kNvwHvjEnv&_nc_oc=Adr-UIWWQIfrW2UQB9oFLXi3RoJWjZVSxZPCg9pmox51SPdR_v6TZga0gShp2l-gJYc&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=z_hRf7AUcjPUAQF0TfOmrw&_nc_ss=7b2a8&oh=00_AQBLgqYugL3N5s3NjOs2tSOoBRxyfUuZNybJsYReoqacew&oe=6A518EC1" alt="Gallery photo 2">
+      </a>
+      <p>Friends #Jboy Boarders</p>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/739773987_122291758982163930_8397591805844286159_n.jpg?stp=dst-jpg_tt6&cstp=mx1542x2048&ctp=s1542x2048&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGceCv629bre2erHXf2G2SV-X4qnX5zSOH5fiqdfnNI4fi71VTsC6v28rVixLDHwHdvJwZ8RuWe8yh0zPia2rlU&_nc_ohc=9W1LlhVOHP0Q7kNvwEJcSIv&_nc_oc=AdqnCbXgc05HSqNjXbCquZzyC1r3F8yyk1ogRRjSLfFDwpZzYSSCzCcNpPnQS4fN_Jg&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=0-4w8mqalUle7g_fBM9CIA&_nc_ss=7b2a8&oh=00_AQAE_rS8vTGJIBPwWiH4XBsv4d20no-l351C_Ubzwp8pZw&oe=6A515C77" target="_blank" class="gallery-item">
+        <img src="https://scontent.fcgy2-2.fna.fbcdn.net/v/t39.30808-6/739773987_122291758982163930_8397591805844286159_n.jpg?stp=dst-jpg_tt6&cstp=mx1542x2048&ctp=s1542x2048&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGceCv629bre2erHXf2G2SV-X4qnX5zSOH5fiqdfnNI4fi71VTsC6v28rVixLDHwHdvJwZ8RuWe8yh0zPia2rlU&_nc_ohc=9W1LlhVOHP0Q7kNvwEJcSIv&_nc_oc=AdqnCbXgc05HSqNjXbCquZzyC1r3F8yyk1ogRRjSLfFDwpZzYSSCzCcNpPnQS4fN_Jg&_nc_zt=23&_nc_ht=scontent.fcgy2-2.fna&_nc_gid=0-4w8mqalUle7g_fBM9CIA&_nc_ss=7b2a8&oh=00_AQAE_rS8vTGJIBPwWiH4XBsv4d20no-l351C_Ubzwp8pZw&oe=6A515C77" alt="Gallery photo 2">
+      </a>
+      <p>Kupal na Amigo</p>
+    </div>
+
+    
+
+  </div>
+</section>
+
+
+  <section id="resume">
+    <h2>Resume / Curriculum Vitae</h2>
+    <p>You may view or download my resume using the link below.</p>
+    <p style="margin-top:10px;">
+      <a href="https://drive.google.com/file/d/1a9e-0bOoNsVgdMmfIB0ZW2f8cfexEUZL/view?usp=sharing" style="color:#1e88e5; font-weight:bold;">Download Resume (PDF)</a>
+    </p>
+
+    <h3>Work Experience</h3>
+    <p>No formal work experience yet, open to on the job training,part time opportunities.</p>
+
+    <h3>References</h3>
+    <p>Available upon request.</p>
+  </section>
+
+ 
+
+
+  <footer>
+    <p>@2026 Heartlee Jay A. Virtudazo. All Rights Reserved.</p>
+    <p>
+      <a href="https://www.facebook.com/heartlee.jay.virtudazo.2024" target="_blank">Facebook</a> |
+      <a href="https://mail.google.com/mail/u/0/#search/in%3Asent+heartleevirtudazo99%40gmail.com" target="_blank">Email</a>
+    </p>
+    <p>Last Updated: July 2026</p>
+  </footer>
+
+</body>
+</html>
